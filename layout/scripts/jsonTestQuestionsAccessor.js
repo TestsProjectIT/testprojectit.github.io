@@ -49,6 +49,7 @@ function checkAnswers()
                 }
         }
     
+    console.log(result);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200)
@@ -69,8 +70,15 @@ function checkAnswers()
                             indexOfMaxNumber = h;
                         }
                 }
+            
+            console.log(indexOfMaxNumber);
+            
             var results = response.results;
+            console.log(results);
+            
             var res = results[indexOfMaxNumber];
+            console.log(res);
+            
             output += '<p><b>'+result.resultName + '</b></p>';
             output += '<p>'+result.resultText + '</p>';
             output += '<form id="SecondForm">';
