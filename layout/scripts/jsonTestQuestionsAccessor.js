@@ -31,6 +31,7 @@ function fillTestsContent()
 
 function checkAnswers()
 {
-    var allVariants = $("MainForm").find("input");
-    console.log(allVariants);
+    var myForm = document.getElementById('MainForm');
+    var allRadioButtons = myForm.getElementsByTagName('input');
+    console.log(allRadioButtons);
 }
