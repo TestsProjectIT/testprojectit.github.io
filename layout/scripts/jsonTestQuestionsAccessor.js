@@ -34,7 +34,7 @@ function checkAnswers()
     var myForm = document.getElementById('MainForm');
     var allRadioButtons = myForm.getElementsByTagName('input');
     var result = [0,0,0,0,0];
-    for(int i = 0; i < allRadioButtons.length; i++)
+    for(var i = 0; i < allRadioButtons.length; i++)
         {
             var curRadioButton = allRadioButtons[i];
             if(curRadioButton.checked)
