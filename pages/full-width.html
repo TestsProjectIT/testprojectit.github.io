@@ -76,20 +76,20 @@ Licence URI: https://www.os-templates.com/template-terms
         </div>
         <div id = "questions">
             <script>
-                /*$.ajax({
+                $.ajax({
     url: 'https://testsprojectit.github.io/data/test.json',
     dataType: 'json',
     type: 'get',
     cache: false,
     success: function(data){
-        $(data.testID.).each(function(index, value)
+        $(data).each(function(index, value)
         {
-            
-            console.log(value);
+            var res = JSON.parse(data);
+            console.log(res);
         });
     }
-}); */
-                var xhttp = new XMLHttpRequest();
+}); 
+               /* var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status == 200)
                     {
@@ -106,7 +106,7 @@ Licence URI: https://www.os-templates.com/template-terms
                     }
             //};
             xhttp.open("GET", "https://testsprojectit.github.io/data/test.json", true);
-            xhttp.send();
+            xhttp.send(); */
             </script>            
         </div>
       </div>  
