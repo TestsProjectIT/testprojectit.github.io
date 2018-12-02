@@ -84,9 +84,13 @@ Licence URI: https://www.os-templates.com/template-terms
     success: function(data){
         $(data).each(function(index, value)
         {
-            var res = JSON.parse(data.questions);
+            var massive = data.questions;
+            for(int i =0; i< massive.length; i++)
+                {
+                   var res = JSON.parse(massive[i]);
+                   console.log(res);
+                }
             console.log(data);
-            console.log(res);
 
         });
     }
