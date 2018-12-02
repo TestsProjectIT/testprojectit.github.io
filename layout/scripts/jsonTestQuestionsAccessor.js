@@ -15,13 +15,21 @@ function fillTestsContent()
                 for(var j=0; j < ansewers.length; j++)
                     {
                         var curAnsewer = ansewers[j];
-                        output += '<p><input type="radio" name="' + question[i].questionID +'" value="' + curAnsewer.score + '"> ' + curAnsewer.ansewerText +'</p>';              
+                        //output += '<p><input type="radio" name="' + question[i].questionID +'" value="' + curAnsewer.score + '"> ' + curAnsewer.ansewerText +'</p>';  
+                        output += '<p><input type="radio" name="' + question[i].questionID +'" value=' + curAnsewer.score + '> ' + curAnsewer.ansewerText +'</p>';              
                     }          
             }
-    document.getElementById('questions').innerHTML = output;
-                        }
+            
+            output += '<br> <input onclick="checkAnswers()" type="submit" name="checkAnswers" value="Узнать ответ"> <br>';
+            document.getElementById('questions').innerHTML = output;
+        }
     };
 
     xhttp.open("GET", "https://testsprojectit.github.io/data/test.json", true);
     xhttp.send(); 
+}
+
+function checkAnswers()
+{
+    
 }
