@@ -10,7 +10,7 @@ function fillTestsContent()
             var output = '<form id="MainForm">';
             for(var i = 0; i < question.length; i++)
             {
-                output += '<p><b> Вопрос номер '+ i +'</b></p>'; 
+                output += '<p><b> Вопрос номер '+ (i + 1) +'</b></p>'; 
                 var ansewers = question[i].ansewers;
                 for(var j=0; j < ansewers.length; j++)
                     {
@@ -33,5 +33,15 @@ function checkAnswers()
 {
     var myForm = document.getElementById('MainForm');
     var allRadioButtons = myForm.getElementsByTagName('input');
-    console.log(allRadioButtons);
+    var result = [0,0,0,0,0];
+    for(int i = 0; i < allRadioButtons.length; i++)
+        {
+            var curRadioButton = allRadioButtons[i];
+            if(curRadioButton.checked)
+                {
+                    result += curRadioButton.value.toArray();
+                }
+        }
+    
+    console.log(result);
 }
