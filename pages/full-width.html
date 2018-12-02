@@ -15,7 +15,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
-<script src="../layout/scripts/jquery.min.js"></script>
 
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -71,11 +70,12 @@ Licence URI: https://www.os-templates.com/template-terms
     <div class="content" >
         <div class="content three_quarter">
             <div>
-            <input type="submit" name="submit" value="Начать тестирование">
+            <input onclick="fillTestsContent()" type="submit" name="submit" value="Начать тестирование">
           </div>
         </div>
+        <p></p>
         <div id = "questions">
-            <script>
+            //<script>
                 /*$.ajax({
     url: 'https://testsprojectit.github.io/data/test.json',
     dataType: 'json',
@@ -96,31 +96,7 @@ Licence URI: https://www.os-templates.com/template-terms
         });
     }
 }); */
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function(){
-    if(this.readyState == 4 && this.status == 200)
-    {
-        //document.getElementById("questions").innerHTML = xhttp.responseText;
-        var response = JSON.parse(xhttp.responseText);
-        var question = response.questions;
-        var output = '';
-        for(var i = 0; i < question.length; i++)
-        {
-            output += '<p><b> Вопрос номер '+ i +'</b></p>'; 
-            var ansewers = question[i].ansewers;
-            for(var j=0; j < ansewers.length; j++)
-                {
-                    var curAnsewer = ansewers[j];
-                    output += '<p><input type="radio" name="' + question[i].questionID +'" value="' + curAnsewer.score + '"> ' + curAnsewer.ansewerText +'</p>';              
-                }          
-        }
-document.getElementById('questions').innerHTML = output;
-                    }
-};
-                
-xhttp.open("GET", "https://testsprojectit.github.io/data/test.json", true);
-xhttp.send(); 
-            </script>            
+            //</script>            
         </div>
       </div>  
     <div class="clear"></div>
@@ -139,7 +115,8 @@ xhttp.send();
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<!-- <script src="../layout/scripts/jsonTestQuestionsAccessor.js"></script> -->
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jsonTestQuestionsAccessor.js"></script>
 <script src="../layout/scripts/jquery.backtotop.js"></script>
 <script src="../layout/scripts/jquery.mobilemenu.js"></script>
 </body>
