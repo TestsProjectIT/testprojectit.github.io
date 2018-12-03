@@ -19,7 +19,7 @@ function fillTestsContent()
                     }          
             }
             output += '</form>';
-            output += '<br> <input onclick="checkAnswers()" type="submit" name="checkAnswers" value="Узнать ответ"> <br>';
+            output += '<br> <input onclick="checkAnswers()" type="submit" name="checkAnswers" value="Узнать результат"> <br>';
             document.getElementById('questions').innerHTML = output;
         }
     };
@@ -81,11 +81,11 @@ function checkAnswers()
             
             output += '<p id="resultName"><b>'+ res.resultName + '</b></p>';
             output += '<p id="resultText">'+ res.resultText + '</p>';
-            output += '<form id="SecondForm">';
-            output += '<p><b>Введите Ваше имя для сохранения результата </b></p>';
-            output += '<input type="text" id="name" name="name" required minlength="4" maxlength="16">';
-            output += '</form>';
-            output += '<br> <input onclick="sendInfo()" type="submit" name="sendInfo" value="Отправить"> <br>';
+            //output += '<form id="SecondForm">';
+            //output += '<p><b>Введите Ваше имя для сохранения результата </b></p>';
+            //output += '<input type="text" id="name" name="name" required minlength="4" maxlength="16">';
+            //output += '</form>';
+            //output += '<br> <input onclick="sendInfo()" type="submit" name="sendInfo" value="Отправить"> <br>';
             document.getElementById('questions').innerHTML = output;
         }
     };
@@ -94,7 +94,7 @@ function checkAnswers()
     xhttp.send(); 
 }
 
-function getResults()
+/*function getResults()
 {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
@@ -154,6 +154,5 @@ function sendInfo()
     
     alert("done");
     
-    getResults();
-    
-}
+    getResults();    
+} */
